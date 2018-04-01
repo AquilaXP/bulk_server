@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <boost\asio.hpp>
+#include <boost/circular_buffer.hpp>
 
 #include "server.h"
 
