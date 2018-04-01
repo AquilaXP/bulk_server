@@ -1,8 +1,7 @@
 #include <iostream>
 
-#include <boost\asio.hpp>
 #include <boost/circular_buffer.hpp>
-
+#include <boost\asio\async_result.hpp>
 #include "server.h"
 
 int main( int ac, char* av[] )
