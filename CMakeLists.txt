@@ -45,15 +45,13 @@ set(HDR
 #program bulk_server
 add_executable(bulk_server ${SRC} ${HDR})
 
-target_include_directories(bulk_server PUBLIC ${CMAKE_CURRENT_BINARY_DIR} async/bulkmt async )
+target_include_directories(bulk_server PUBLIC ${CMAKE_CURRENT_BINARY_DIR} async/bulkmt async ${Boost_INCLUDE_DIR} )
 
 set_target_properties( bulk_server PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
    # COMPILE_OPTIONS -Wall
 )
-
-target_include_directories(bulk_server PUBLIC ${Boost_INCLUDE_DIR} ${Boost_INCLUDE_DIR} )
 
 target_link_libraries(bulk_server 
     ${Boost_LIBRARIES}    
