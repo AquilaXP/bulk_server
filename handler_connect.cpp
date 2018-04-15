@@ -25,7 +25,7 @@ void handler_connect::do_read()
         if( length != 0 )
             m_separator_cmd.push_data( m_buffer, length );
 
-        if( !ec || length == 0 )
+        if( ec || length == 0 )
         {
             m_server->remove_handler( this );
         }
