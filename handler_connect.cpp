@@ -27,7 +27,7 @@ void handler_connect::do_read()
 
         if( ec || length == 0 )
         {
-            m_server->remove_handler( this );
+            disconnect();
         }
         else
         {
@@ -40,6 +40,7 @@ void handler_connect::disconnect()
 {
     if( m_handler )
     {
+        m_server->remove_handler( this );
         async::disconnect( m_handler );
         m_handler = nullptr;
     }
