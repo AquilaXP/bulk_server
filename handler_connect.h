@@ -22,6 +22,7 @@ public:
 private:
     void do_read();
     void disconnect();
+    void check_deadline( const boost::system::error_code& ec );
 
     std::string data;
     char m_buffer[size_block_read];
@@ -29,4 +30,5 @@ private:
     server* m_server = nullptr;
     async::handle_t m_handler;
     boost::asio::ip::tcp::socket m_socket;
+    boost::asio::deadline_timer deadline;
 };
