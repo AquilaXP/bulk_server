@@ -29,6 +29,7 @@ private:
     separator_cmd m_separator_cmd;
     server* m_server = nullptr;
     async::handle_t m_handler;
+    async::handle_t m_simple_handler;
     boost::asio::ip::tcp::socket m_socket;
     boost::asio::deadline_timer deadline;
 };
